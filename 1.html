@@ -1,0 +1,92 @@
+<!-- What are closures? Give an example of closures -->
+It is a function having access to the parent scope, even after the parent function has closed.
+ex :- function OuterFunction() {
+
+    var outerVariable = 100;
+  
+    function InnerFunction() {
+        console.log(outerVariable);
+    }
+  
+    return InnerFunction;
+  }
+   var innerFunc=OuterFunction();
+   innerFunc();
+
+<!-- Explain call(), apply() and, bind() methods. Give an example of call(), apply(), bind() -->
+call() - It invokes the function and allows you to pass in arguments one by one.
+ex - const person = {
+    firstName:"John",
+    lastName: "Doe",
+    fullName: function () {
+      return this.firstName + " " + this.lastName;
+    }
+  }
+  
+  person.fullName();  
+  
+apply() - It invokes the function and allows you to pass in arguments as an array.
+ex - const person = {
+    fullName: function() {
+      return this.firstName + " " + this.lastName;
+    }
+  }
+  
+  const person1 = {
+    firstName: "Mary",
+    lastName: "Doe"
+  }
+  person.fullName.apply(person1);
+
+
+
+bind() - I t returns a new function, allowing you to pass in a this array and any number of arguments.
+ex - const person = {
+    firstName:"John",
+    lastName: "Doe",
+    fullName: function () {
+      return this.firstName + " " + this.lastName;
+    }
+  }
+  const member = {
+    firstName:"Hege",
+    lastName: "Nilsen",
+  }
+  let fullName = person.fullName.bind(member);
+
+<!-- What is creation phase and execution phase? -->
+Creation Phase:- All the variables are allocated memories and assigned with a default value as undefined.
+They are not initalization with their initial values.
+Execution Phase:- We allocate the actual values to the variables instead of the default value.
+
+<!-- What are objects in javascript? -->
+Object is a non-primitive data-type that allows you to store multiple collections of data.
+
+<!-- What are function constructors? -->
+A constructor is a special function that creates and initializes an object instance of a class. 
+It is a constructor gets called when an object is created using the new keyword. 
+The purpose of a constructor is to create a new object and set values for any existing object
+ properties.
+
+<!-- Explain prototypes -->
+The prototype is an object that is associated with every functions and objects by default.
+
+<!-- What is prototype chain -->
+In prototype chain each object has a private property which holds a link to another object called its prototype.
+That prototype object has a prototype of its own, and so on until an object is reached with null as its prototype.
+
+<!-- Give an example of inheritance using function constructor -->
+Inheritance is a useful feature that allows code reusability. In the above example, 
+the Student class inherits all the methods and properties of the Person class. 
+Hence, the Student class will now have the name property and the greet() method.
+
+<!-- What are callbacks? -->
+A callback function is a function passed as an argument to another function.
+
+<!-- What is the use of setTimeout -->
+It sets a timer which executes a function or specified piece of code once the timer expires.
+
+<!-- What is an event loop and call stack -->
+Event loop - It is responsible for exceuting the code, collecting and processing events, and 
+exceuting queued sub - tasks.
+Call stack - It is a mechanism for interpreter to keep track of multiple function call. 
