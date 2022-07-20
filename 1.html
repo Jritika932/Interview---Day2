@@ -67,9 +67,22 @@ A constructor is a special function that creates and initializes an object insta
 It is a constructor gets called when an object is created using the new keyword. 
 The purpose of a constructor is to create a new object and set values for any existing object
  properties.
+ex - const sum = new Function('a', 'b', 'return a + b');
+console.log(sum(2, 6));
 
 <!-- Explain prototypes -->
 The prototype is an object that is associated with every functions and objects by default.
+ex - const parentObject={
+
+name:"ritika",
+age:23,
+
+
+}
+var childObect=Object.create(parentObject)
+console.log(parentObject.name);
+console.log(childObect.name);
+
 
 <!-- What is prototype chain -->
 In prototype chain each object has a private property which holds a link to another object called its prototype.
@@ -82,9 +95,20 @@ Hence, the Student class will now have the name property and the greet() method.
 
 <!-- What are callbacks? -->
 A callback function is a function passed as an argument to another function.
+ex- function greeting(name) {
+  alert('Hello ' + name);
+}
+
+function processUserInput(callback) {
+  var name = prompt('Please enter your name.');
+  callback(name);
+}
+
+processUserInput(greeting);
 
 <!-- What is the use of setTimeout -->
 It sets a timer which executes a function or specified piece of code once the timer expires.
+Syntax: setTimeout(function, time);
 
 <!-- What is an event loop and call stack -->
 Event loop - It is responsible for exceuting the code, collecting and processing events, and 
